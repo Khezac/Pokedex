@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Tiny5&display=swap');
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -23,4 +25,5 @@
   padding: 0;
   text-decoration: none;
   line-height: 1;
+  font-family: "Tiny5", sans-serif;
 }

@@ -1,0 +1,72 @@
+.ladoEsqContainer{
+    margin-top: 200px;
+    height: 550px;
+    width: 430px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.visorSuperEsq {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    width: 380px;
+    height: 190px;
+    background-color: transparent;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.visorSuperEsq img {
+    width: auto;
+    height: 70%;
+    object-fit: cover;
+}
+
+.parteInferior{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex;
+
+    width: 100%;
+    height: 200px;
+    background-color: transparent;
+}
+
+.btnCapturar{
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.btnCapturar img{
+    width: 100%;
+}
+
+.infosContainer{
+    list-style: none;
+    margin-top: 23%;
+    width: 180px;
+}
+
+.infosContainer li{
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: left;
+}
+
+.pad {
+    width: 150px;
+    height: 150px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}

@@ -1,10 +1,11 @@
 import { Pad } from "../Pad";
+import { VisorInferiorEsq } from "../VisorInferiorEsquerda";
 
 export const PokedexEsquerda = () => {
   return (
     <div>
-      <h1>Teste</h1>
       <Pad/>
+      <VisorInferiorEsq/>
     </div>
   );
 };

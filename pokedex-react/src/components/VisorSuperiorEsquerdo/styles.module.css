@@ -1,0 +1,19 @@
+.visorSuperEsq {
+    position: absolute;
+    display: flex;
+    width: 22vw;
+    height: 28vh;
+    background-color: black;
+    margin-left: -385px;
+    margin-top: -138px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.visorSuperEsq img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+

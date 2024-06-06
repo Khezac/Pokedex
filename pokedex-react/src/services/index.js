@@ -5,7 +5,7 @@ const api = axios.create({
 })
 
 export function getPokemon() {
-  let randomPokemon = Math.floor(Math.random() * 150);
+  let randomPokemon = Math.floor(Math.random() * 151);
   const url = ('pokemon/' + randomPokemon);
 
   return api.get(url)

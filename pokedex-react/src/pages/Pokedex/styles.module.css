@@ -3,5 +3,16 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    gap: 210px;
+}
+
+.pokedex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 140px;
+    width: 1200px;
+    height: 920px;
+    background-size: 100%;
+    background-image: url(../../assets/pokedex_aberta.png);
+    background-position: center;
 }

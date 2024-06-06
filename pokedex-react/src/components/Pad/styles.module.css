@@ -1,0 +1,8 @@
+.pad {
+    width: 150px;
+    height: 150px;
+    /* background-color: transparent; */
+    border: none;
+    outline: none;
+    cursor: pointer;
+}

@@ -1,4 +1,5 @@
-.logo {
-    width: 200px;
-    height: auto;
+.pokedexContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

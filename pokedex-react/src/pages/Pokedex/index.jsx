@@ -1,10 +1,14 @@
 import styles from './styles.module.css'
-import LogoGif from '../../assets/logoGif.gif'
+
+import { Logo } from '../../components/Logo/index.jsx'
 
 const Pokedex = () => {
     return (
-        <div>
-            <img className={styles.logo} src={LogoGif} alt="Pokebola Logo" />
+        <div className={styles.pokedexContainer}>
+            <Logo/>
+            <div>
+                <h1>Teste</h1>
+            </div>
         </div>
     )
 };

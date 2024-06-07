@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { getPokemon } from "../../services/index.js";
+import { getPokemon } from "../../services/pokeApi/index.jsx";
+import { postPoke } from "../../services/jsonSv/index.jsx";
 import styles from "../PokedexEsquerda/style.module.css";
 import pokebolaBtn from "../../assets/pokebola_icone.png";
 import naoCapturado from "../../assets/POKEMON FUGIU.png"
@@ -13,6 +14,7 @@ export const PokedexEsquerda = () => {
   const [message, setMessage] = useState("");
   const [capt, setCapt] = useState(false);
   const [naoCapt, setNaoCapt] = useState(false);
+  const [limiteCaptura, setLimiteCaptura] = useState(0);
 
   async function getPokemonData() {
     setNaoCapt(false);
@@ -28,21 +30,26 @@ export const PokedexEsquerda = () => {
   }
 
   function handleCapturar() {
+    if(limiteCaptura >= 10){
+      console.log("não da mais")
+      return;
+    }
 
     setIsCatching(true);
     setTimeout(() => {
-      const success = Math.random(0, 1) < 0.2;
+      const success = Math.random(0, 1) < 1;
       setIsCatching(false);
       if (success) {
         setCapt(true);
         setNaoCapt(false);
-        setPokemon(false)
-
+        setPokemon(false);
+        postPoke(pokemon,randomLvl)
+        setLimiteCaptura(limiteCaptura+1);
+        console.log(limiteCaptura)
       } else {
         setCapt(false);
         setNaoCapt(true)
         setPokemon(false)
-
       }
     }, 1000);
 

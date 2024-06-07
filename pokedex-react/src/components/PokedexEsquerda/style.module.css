@@ -18,6 +18,7 @@
     background-color: transparent;
     border-radius: 20px;
     overflow: hidden;
+    position: relative;
 }
 
 .visorSuperEsq img {
@@ -83,4 +84,8 @@
     100% {
         transform: rotate(360deg);
     }
+}
+
+.naoCapturado{
+    position: absolute;
 }

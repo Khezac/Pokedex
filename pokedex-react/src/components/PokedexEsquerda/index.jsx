@@ -2,14 +2,21 @@ import { useState } from "react";
 import { getPokemon } from "../../services/index.js";
 import styles from "../PokedexEsquerda/style.module.css";
 import pokebolaBtn from "../../assets/pokebola_icone.png";
+import naoCapturado from "../../assets/POKEMON FUGIU.png"
+import capturado from "../../assets/POKEMON CAPTURADO.png"
+
 
 export const PokedexEsquerda = () => {
   const [pokemon, setPokemon] = useState(null);
   const [randomLvl, setRandomLvl] = useState(null);
   const [isCatching, setIsCatching] = useState(false);
   const [message, setMessage] = useState("");
+  const [capt, setCapt] = useState(false);
+  const [naoCapt, setNaoCapt] = useState(false);
 
   async function getPokemonData() {
+    setNaoCapt(false);
+    setCapt(false);
     try {
       const result = await getPokemon();
       setPokemon(result.data);
@@ -21,37 +28,36 @@ export const PokedexEsquerda = () => {
   }
 
   function handleCapturar() {
+
     setIsCatching(true);
-    setTimeout(async () => {
-      const success = Math.random() < 0.3;
+    setTimeout(() => {
+      const success = Math.random(0, 1) < 0.2;
       setIsCatching(false);
       if (success) {
-        console.log(`Você capturou ${pokemon.name}!`);
-        await fetchNewPokemon();
+        setCapt(true);
+        setNaoCapt(false);
+        setPokemon(false)
+
       } else {
-        console.log(`A captura de ${pokemon.name} falhou.`);
-        await fetchNewPokemon(); 
+        setCapt(false);
+        setNaoCapt(true)
+        setPokemon(false)
+
       }
     }, 1000);
+
   }
 
-  async function fetchNewPokemon() {
-    try {
-      const result = await getPokemon();
-      setPokemon(result.data);
-      setRandomLvl(Math.floor(Math.random() * (50 - 1) + 1));
-    } catch {
-      console.log("Falha ao buscar Pokémon");
-    }
-  }
 
   return (
     <div className={styles.ladoEsqContainer}>
       <div className={styles.visorSuperEsq}>
-        <img
-          src={pokemon ? pokemon.sprites.other['official-artwork'].front_default : "loading..."}
-          alt="loading pokemon..."
-        />
+        {pokemon && <img
+          src={pokemon.sprites.other.showdown.front_default}
+          alt=""
+        />}
+        {naoCapt && <img className={styles.naoCapturado} src={naoCapturado} alt="Não capturado" />}
+        {capt && <img className={styles.naoCapturado} src={capturado} alt="Capturado" />}
       </div>
       <div className={styles.parteInferior}>
         <button

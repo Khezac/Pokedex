@@ -1,8 +1,9 @@
 .VisorSuperiorDireito {
-    margin-top: 2px;
-    margin-left: 15px;
-    height: 135px;
-    width: 363px;
+    margin-top: 20px;
+    margin-left: 50px;
+    height: 115px;
+    width: 340px;
     border-radius: 5px;
-    background-color: black;
+    background-color: transparent;
+    font-size: large;
 }

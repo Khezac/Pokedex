@@ -24,10 +24,8 @@ export const PokedexDireita = () => {
     
     return (
         <div className={styles.ladoDirContainer}>
-            <p>PokedexDireita</p>
-            <VisorSuperiorDireito/>
             <div>
-                visor superior
+            <VisorSuperiorDireito/>
             </div>
                 <div>
                 {pokemonList ? pokemonList.map((element,index)=><p key={index}>{element.name}</p>):<p>erro</p>}

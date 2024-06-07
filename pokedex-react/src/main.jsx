@@ -6,5 +6,6 @@ import Login from './components/Login/login.jsx'
 ReactDOM.createRoot(document.getElementById('root')).render(
     <>
         <Login/>
+        {/* <Pokedex/> */}
     </>
 )

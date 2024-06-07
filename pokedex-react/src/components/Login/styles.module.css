@@ -1,24 +1,47 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: Helvetica;
-    box-sizing: border-box;
-    text-shadow: #000 1px 1px;
-    background-size: cover;
-    background-position: center;
-    }
-    .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background-image: url(../../assets/fundo_login.png); 
-    }
-    .containerlogin {
-    background-color: #000;
-    height: 200px;
-    width: 200px;
-    padding: 200px;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
 
-
-    }
+.containerlogin {
+  padding: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 140px;
+  width: auto;
+  height: 920px;
+  background-size: 850px;
+  background-image: url(../../assets/pokedex_fechada.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.loginForm {
+background-color: transparent;
+width: 320px;
+height: 270px;
+margin-bottom: 80px;
+margin-right: 18px;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+gap: 10px;
+}
+.loginForm h1{
+font-size: 40px;
+}
+.loginForm input {
+border: 3px solid black;
+font-size: 25px;
+border-radius: 4px;
+}
+.loginForm button {
+  width: 180px;
+  height: 30px;
+  border-radius: 4px;
+  border: 3px solid black;
+  margin-top: 55px;
+}

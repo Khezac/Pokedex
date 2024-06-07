@@ -3,5 +3,91 @@
     margin-top: 220px;
     height: 530px;
     width: 380px;
-    border:2px solid yellow;
+}
+
+
+.statusPokemon{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    margin-left: 50px;
+    border-radius: 5px;
+    background-color: transparent;
+    font-size: 20px;
+}
+
+.listaPokemon{
+display: flex;
+align-items: center;
+flex-wrap: wrap;
+margin-top: 27px;
+height: 110px;
+margin-left: 28px;
+width:  360px;
+}
+
+.pokemons{
+height: 55px;
+width: 71px; 
+display: flex;
+align-items: center;
+justify-content: center;   
+}
+
+.countIferior{
+    margin-top: 45px;
+    height: 170px;
+    margin-left: 20px;
+    width: 360px;
+}
+
+.visoresInfContainer{
+    margin-top: 48px;
+}
+
+.botoesDireito{
+    margin-left: 3px;
+    height: 50px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pokebollbtn{
+    margin-top: 15px;
+    height: 50px;
+    width: 75px;
+    background-color: red;
+    border-color: black;
+}
+
+.soltarbtn{
+    margin-top: 15px;
+    height: 50px;
+    width: 75px;
+    background-color: blue;
+    border-color: black;
+}
+
+.visoresInfContainer{
+    height: 60px;
+    width: 360px;
+    margin-top: 70px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: space-between; 
+}
+
+.visorDireitoInferior1{
+    height: 60px;
+    width: 170px;
+   
+}
+
+
+.visorDireitoInferior2{
+    height: 60px;
+    width: 160px;
 }

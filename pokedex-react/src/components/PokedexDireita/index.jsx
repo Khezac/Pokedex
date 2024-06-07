@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import styles from './style.module.css'
-import { VisorSuperiorDireito } from '../VisorSuperiorDireito';
 import { VisorDireitoInferiorUm } from '../VisorDireitoInferiorUm';
 import { VisorDireitoInferiorDois } from '../VisorDireitoInferiorDois';
 
@@ -24,20 +23,37 @@ export const PokedexDireita = () => {
     
     return (
         <div className={styles.ladoDirContainer}>
-            <div>
-            <VisorSuperiorDireito/>
+            <div className={styles.statusPokemon}>
+           <div>
+            <p>Pokémon:</p>
+            <p>Movimentos:</p>
+            <ol>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
             </div>
-                <div>
-                {pokemonList ? pokemonList.map((element,index)=><p key={index}>{element.name}</p>):<p>erro</p>}
+            <div>pokemon gif</div>
             </div>
-            <div>
-                <div className='visorDireitoInferior1'>
+                <div className={styles.listaPokemon}>
+                {pokemonList && pokemonList.map((element,index)=>
+              <div className={styles.pokemons} key={index}><p>{element.name}</p></div>)}
+            </div>
+            <div className={styles.countIferior}>
+                <div className={styles.botoesDireito}>
+                <button className={styles.pokebollbtn}>pokebollas</button>
+                <button className={styles.soltarbtn}>Soltar</button>
+                </div>
+            <div className={styles.visoresInfContainer}>
+                <div className={styles.visorDireitoInferior1}>
                     <VisorDireitoInferiorUm/>
                 </div>
                 
-                <div className='visorDireitoInferior2'>
+                <div className={styles.visorDireitoInferior2}>
                     <VisorDireitoInferiorDois/>
                 </div>
+            </div>
             </div>
         </div>
     )

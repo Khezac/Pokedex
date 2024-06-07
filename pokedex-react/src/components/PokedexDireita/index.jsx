@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import styles from './style.module.css'
 import { VisorSuperiorDireito } from '../VisorSuperiorDireito';
-
+import { VisorDireitoInferiorUm } from '../VisorDireitoInferiorUm';
+import { VisorDireitoInferiorDois } from '../VisorDireitoInferiorDois';
 
 export const PokedexDireita = () => {
     const [pokemonList,setPokemonList] = useState('');
@@ -29,19 +30,16 @@ export const PokedexDireita = () => {
                 visor superior
             </div>
                 <div>
-                {pokemonList ? pokemonList.map(element=><p>{element.name}</p>):<p>erro</p>}
+                {pokemonList ? pokemonList.map((element,index)=><p key={index}>{element.name}</p>):<p>erro</p>}
             </div>
             <div>
-                
                 <div className='visorDireitoInferior1'>
-           
+                    <VisorDireitoInferiorUm/>
                 </div>
                 
                 <div className='visorDireitoInferior2'>
-                
-                </div>    
-
-            
+                    <VisorDireitoInferiorDois/>
+                </div>
             </div>
         </div>
     )

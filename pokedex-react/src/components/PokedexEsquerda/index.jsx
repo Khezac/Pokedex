@@ -76,7 +76,7 @@ export const PokedexEsquerda = () => {
           <img className={styles.btnCapturarIcon} src={pokebolaBtn} alt="Capturar" />
         </button>
         <ul className={styles.infosContainer}>
-          <li>Nome: {pokemon ? pokemon.name : "--"}</li>
+          <li >Nome: {pokemon ? <span> {pokemon.name} </span>: "--"}</li>
           <li>
             Tipo: {pokemon ? pokemon.types.map((element) => element.type.name).join(", ") : "--"}
           </li>

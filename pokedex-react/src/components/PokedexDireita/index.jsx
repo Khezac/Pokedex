@@ -1,32 +1,38 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import styles from './style.module.css'
-import { getPokeCapt, getPokeCaptById } from '../../services/jsonSv';
+import { deletePoke, getPokeCaptById } from '../../services/jsonSv';
 import { getPokemonById } from '../../services/pokeApi';
+import { PokeContext } from '../../context/pokeContext';
 
 export const PokedexDireita = () => {
-    const [pokemonList,setPokemonList] = useState('');
     const [pokemonAtual, setPokemonAtual] = useState();
     const [levelAtual, setLevelAtual] = useState();
+    const [podeDeletar, setPodeDeletar] = useState(false);
 
-    getCapturados()
-
-    async function getCapturados(){
-        try {
-            const results = await getPokeCapt();
-            setPokemonList(results.data)
-        } catch {
-            console.log("Ocorreu um erro")
-        }
-    }
+    const {pokemonList, updateList} = useContext(PokeContext)
 
     async function handlePokeCapt(e) {
         let id = e.target.id;
         let pokeCaptId = pokemonList[id].id
+
         const resultPokeApi = await getPokemonById(pokeCaptId)
         setPokemonAtual(resultPokeApi.data)
 
         const resultJsonSv = await getPokeCaptById(pokeCaptId);
         setLevelAtual(resultJsonSv.data[0].lvl)
+
+        setPodeDeletar(true);
+    }
+
+    function handleSoltar() {
+        deletePoke(pokemonAtual.id)
+        setPokemonAtual(null);
+        setPodeDeletar(false);
+        setLevelAtual(null);
+
+        setTimeout(() => {
+            updateList()
+        }, 10);
     }
 
     function handleAbility() {
@@ -53,7 +59,7 @@ export const PokedexDireita = () => {
             <div className={styles.countIferior}>
                 <div className={styles.botoesDireito}>
                 <button onClick={handleAbility} className={styles.pokebollbtn}>pokebollas</button>
-                <button className={styles.soltarbtn}>Soltar</button>
+                {podeDeletar && <button className={styles.soltarbtn} onClick={handleSoltar}>Soltar</button>}
                 </div>
             <div className={styles.visoresInfContainer}>
                 <div className={styles.visorDireitoInferior1}>

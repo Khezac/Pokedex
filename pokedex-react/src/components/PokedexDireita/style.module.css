@@ -5,7 +5,6 @@
     width: 380px;
 }
 
-
 .statusPokemon{
     display: flex;
     justify-content: space-between;
@@ -34,7 +33,6 @@
 
 .listaPokemon{
 display: flex;
-align-items: center;
 flex-wrap: wrap;
 margin-top: 27px;
 height: 110px;
@@ -78,7 +76,6 @@ justify-content: center;
     width: 150px;
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 .pokebollbtn{
@@ -93,8 +90,11 @@ justify-content: center;
     margin-top: 15px;
     height: 50px;
     width: 75px;
-    background-color: blue;
-    border-color: black;
+    background-color: transparent   ;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
 }
 
 .visoresInfContainer{

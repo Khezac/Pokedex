@@ -20,7 +20,7 @@ const apiJson = axios.create({
     const url = 'capturados/'
 
     const Pokemon = {
-      id: pokemon.id,
+      id: `${pokemon.id}`,
       lvl: lvl,
       sprite: pokemon.sprites.front_default
     }
@@ -29,9 +29,21 @@ const apiJson = axios.create({
 
     apiJson.post(url,pokeJson)
     .then((response) => {
-      console.log("Deu certo" + response)
+      console.log("Pokemon capturado na API com sucesso!\n" + JSON.stringify("id: " + response.data.id + ",lvl: " + response.data.lvl ))
     })
     .catch((error) => {
-      console.log("Deu Errado" + error)
+      console.log("Falha ao inserir pokemon na api!!\n" + error)
     });
+  }
+
+  export function deletePoke(id) {
+    const url = 'capturados/' + id;
+
+    apiJson.delete(url)
+    .then((response)=> {
+      console.log("Pokemon de id: " + id + "solto com sucesso!\n" + response)
+    })
+    .catch((error) => {
+      console.log("Não foi possivel soltar o pokemon com id: " + id + "\nErro: " + error)
+    })
   }

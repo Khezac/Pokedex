@@ -3,11 +3,13 @@ import styles from './style.module.css'
 import { deletePoke, getPokeCaptById } from '../../services/jsonSv';
 import { getPokemonById } from '../../services/pokeApi';
 import { PokeContext } from '../../context/pokeContext';
+import { useNavigate } from "react-router-dom";
 
 export const PokedexDireita = () => {
     const [pokemonAtual, setPokemonAtual] = useState();
     const [levelAtual, setLevelAtual] = useState();
     const [podeDeletar, setPodeDeletar] = useState(false);
+    const navigate = useNavigate();
 
     const {pokemonList, updateList} = useContext(PokeContext)
 
@@ -35,6 +37,10 @@ export const PokedexDireita = () => {
         }, 10);
     }
 
+    function handleLogOff() {
+        navigate('/')
+    }
+
     return (
         <div className={styles.ladoDirContainer}>
             <div className={styles.statusPokemon}>
@@ -54,6 +60,7 @@ export const PokedexDireita = () => {
             </div>
             <div className={styles.countIferior}>
                 <div className={styles.botoesDireito}>
+                <button className={styles.soltarbtn} onClick={handleLogOff}>LogOff</button>
                 {podeDeletar && <button className={styles.soltarbtn} onClick={handleSoltar}>Soltar</button>}
                 </div>
             <div className={styles.visoresInfContainer}>

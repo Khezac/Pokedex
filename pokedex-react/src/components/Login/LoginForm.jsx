@@ -3,10 +3,11 @@ import { useState, useEffect } from "react";
 import styles from "./styles.module.css";
 import { Logo } from '../Logo/index.jsx'
 import { getUsers } from "../../services/jsonSv/index.jsx";
+import {toast, ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const [apiUsers, setApiUsers] = useState();
-
     const [username, setUsername] = useState("");
     const [password, setPassaword] = useState("");
 
@@ -37,11 +38,10 @@ const Login = () => {
         if(apiUsers){
             if(apiUsers.find((element) => element.id == username && element.senha == password)){
                 setLogged(true);
-                console.log("Logado")
                 navigate('../pokedex')
             } else {
                 setLogged(false);
-                console.log("erro ao logar");
+                toast.error("Credenciais inválidas!!!")
             }
         }
         setUsername('');
@@ -51,7 +51,6 @@ const Login = () => {
 
     useEffect(() => {
         if (submitted) {
-          //notificacao toastfy
             //console.log(loggedIn ? 'Usuário logado com sucesso.' : 'Falha no login do usuário.');
           setSubmitted(false);
         }
@@ -64,7 +63,7 @@ const Login = () => {
             <Logo />
             <div className={styles.containerlogin}>
                 <form className={styles.loginForm} onSubmit={handleSubmit}>
-
+                    <ToastContainer/>
                     <h1>Acesse o sistema</h1>
                     <div>
                     <input

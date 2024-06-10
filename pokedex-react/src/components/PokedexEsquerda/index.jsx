@@ -6,7 +6,8 @@ import pokebolaBtn from "../../assets/pokebola_icone.png";
 import naoCapturado from "../../assets/POKEMON FUGIU.png"
 import capturado from "../../assets/POKEMON CAPTURADO.png"
 import { PokeContext } from "../../context/pokeContext.jsx";
-
+import {toast, ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const PokedexEsquerda = () => {
   const [pokemon, setPokemon] = useState(null);
@@ -31,7 +32,7 @@ export const PokedexEsquerda = () => {
 
   function handleCapturar() {
     if(pokemonList.length >= 10){
-      console.log("Limite de pokemons capturados excedido")
+      toast.error("Limite de pokemons capturados excedido!!!");
       return;
     }
 
@@ -57,6 +58,7 @@ export const PokedexEsquerda = () => {
 
   return (
     <div className={styles.ladoEsqContainer}>
+      <div className={styles.pokeToast}><ToastContainer/></div>
       <div className={styles.visorSuperEsq}>
         {pokemon && <img
           src={pokemon.sprites.other.showdown.front_default}

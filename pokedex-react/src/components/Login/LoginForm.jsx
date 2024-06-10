@@ -86,7 +86,7 @@ const Login = () => {
                         />
                     </div>
 
-                    <button type="submit" title="Login">Start</button>
+                    <button className={styles.pokeStart} type="submit" title="Login">Start</button>
                 </form>
             </div>
         </div>

@@ -48,3 +48,8 @@ background-color: rgba(255, 255, 255, 0.521);
   border: 3px solid black;
   margin-top: 55px;
 }
+
+.pokeStart:hover {
+  background-color: rgb(21, 190, 21);
+  
+}

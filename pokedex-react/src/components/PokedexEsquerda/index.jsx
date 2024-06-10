@@ -38,7 +38,7 @@ export const PokedexEsquerda = () => {
 
     setIsCatching(true);
     setTimeout(() => {
-      const success = Math.random(0, 1) < 1;
+      const success = Math.random(0, 1) < 0.3;
       setIsCatching(false);
       if (success) {
         setCapt(true);

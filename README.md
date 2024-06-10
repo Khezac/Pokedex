@@ -2,8 +2,8 @@
 Nosso projeto se trata de uma pokédex, onde você se loga com suas credenciais e com seu login feito é possível então acessar a sua pokedex, nela você pode capturar pokemons, ver informações dos ataques deles e também ver os seus pokemons ja capturados e também suas respectivas informações.
 
 # Desenvolvedores:
-- <a href="https://www.linkedin.com/in/matheusff002/" target="_blank">Dionatan Andrade</a>
-- <a href="www.linkedin.com/in/khezac/" target="_blank">Khezac Khalleb</a>
+- <a href="https://www.linkedin.com/in/dionatan-andrade-618331313/" target="_blank">Dionatan Andrade</a>
+- <a href="https://www.linkedin.com/in/khezac/" target="_blank">Khezac Khalleb</a>
 - <a href="https://www.linkedin.com/in/leoesplinio/" target="_blank">Leonardo Esplínio</a>
 - <a href="https://www.linkedin.com/in/lucas-rodrigues-928419110/" target="_blank">Lucas Amorim</a>
 - <a href="https://www.linkedin.com/in/matheusff002/" target="_blank">Matheus Fonseca</a>

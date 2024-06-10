@@ -1,9 +1,11 @@
-import { FaLock, FaUser } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import styles from "./styles.module.css";
+import { Logo } from '../Logo/index.jsx'
+import { getUsers } from "../../services/jsonSv/index.jsx";
 
 const Login = () => {
+    const [apiUsers, setApiUsers] = useState();
 
     const [username, setUsername] = useState("");
     const [password, setPassaword] = useState("");
@@ -11,6 +13,15 @@ const Login = () => {
     const [submitted, setSubmitted] = useState(false);
     const [loggedIn, setLogged] = useState(false);
     const navigate = useNavigate();
+
+    async function getUsersData() {
+        try{
+            const results = await getUsers();
+            setApiUsers(results.data);
+        } catch {
+            console.log("Erro ao requisitar usuários!");
+        }
+    }
 
     const handleUserChange = (e) => {
         setUsername(e.target.value);
@@ -22,13 +33,16 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(username === 'lcs97' && password === '1234') {
-            setLogged(true);
-            console.log("Logado")
-            navigate('../pokedex')
-        } else {
-            setLogged(false);
-            console.log("erro ao logar");
+        getUsersData();
+        if(apiUsers){
+            if(apiUsers.find((element) => element.id == username && element.senha == password)){
+                setLogged(true);
+                console.log("Logado")
+                navigate('../pokedex')
+            } else {
+                setLogged(false);
+                console.log("erro ao logar");
+            }
         }
         setUsername('');
         setPassaword('');
@@ -41,11 +55,13 @@ const Login = () => {
             //console.log(loggedIn ? 'Usuário logado com sucesso.' : 'Falha no login do usuário.');
           setSubmitted(false);
         }
+        getUsersData()
       }, [submitted, loggedIn]);
 
 
     return (
         <div className={styles.container}>
+            <Logo />
             <div className={styles.containerlogin}>
                 <form className={styles.loginForm} onSubmit={handleSubmit}>
 
@@ -72,7 +88,6 @@ const Login = () => {
                     </div>
 
                     <button type="submit" title="Login">Start</button>
-                    
                 </form>
             </div>
         </div>

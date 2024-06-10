@@ -35,10 +35,6 @@ export const PokedexDireita = () => {
         }, 10);
     }
 
-    function handleAbility() {
-        console.log(levelAtual)
-    }
-
     return (
         <div className={styles.ladoDirContainer}>
             <div className={styles.statusPokemon}>
@@ -58,7 +54,6 @@ export const PokedexDireita = () => {
             </div>
             <div className={styles.countIferior}>
                 <div className={styles.botoesDireito}>
-                <button onClick={handleAbility} className={styles.pokebollbtn}>pokebollas</button>
                 {podeDeletar && <button className={styles.soltarbtn} onClick={handleSoltar}>Soltar</button>}
                 </div>
             <div className={styles.visoresInfContainer}>

@@ -78,14 +78,6 @@ justify-content: center;
     align-items: center;
 }
 
-.pokebollbtn{
-    margin-top: 15px;
-    height: 50px;
-    width: 75px;
-    background-color: red;
-    border-color: black;
-}
-
 .soltarbtn{
     margin-top: 15px;
     height: 50px;
@@ -103,13 +95,12 @@ justify-content: center;
     margin-top: 70px;
     margin-left: 10px;
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
 }
 
 .visorDireitoInferior1{
     height: 60px;
     width: 170px;
-   
 }
 
 

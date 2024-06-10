@@ -4,8 +4,14 @@ const apiJson = axios.create({
     baseURL: 'http://localhost:8080/'
   })
 
+  export function getUsers(){
+    const url="users/";
+
+    return apiJson.get(url);
+  }
+
   export function getPokeCapt() {
-    const url = "capturados/"
+    const url = "/capturados/"
 
     return apiJson.get(url);
   }

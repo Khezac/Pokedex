@@ -66,7 +66,9 @@ export const PokedexEsquerda = () => {
 
   return (
     <div className={styles.ladoEsqContainer}>
-      <div className={styles.pokeToast}><ToastContainer/></div>
+      <div className={styles.pokeToast}>
+        <ToastContainer/>
+      </div>
       <div className={styles.visorSuperEsq}>
         {pokemon && <img
           src={pokemon.sprites.other.showdown.front_default}
@@ -74,6 +76,8 @@ export const PokedexEsquerda = () => {
         />}
         {naoCapt && <img className={styles.naoCapturado} src={naoCapturado} alt="Não capturado" />}
         {capt && <img className={styles.naoCapturado} src={capturado} alt="Capturado" />}
+        <p>Pokédex de:</p>
+        {userId != "null" && <span>{userId}</span>}
       </div>
       <div className={styles.parteInferior}>
         <button

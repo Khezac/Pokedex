@@ -17,7 +17,6 @@
     height: 190px;
     background-color: transparent;
     border-radius: 20px;
-    overflow: hidden;
     position: relative;
 }
 
@@ -25,6 +24,23 @@
     width: auto;
     height: 70%;
     object-fit: cover;
+}
+
+.visorSuperEsq p {
+    position: absolute;
+    color: black;
+    bottom: -80px;
+    left: 90px;
+    text-align: center;
+}
+
+.visorSuperEsq span {
+    position: absolute;
+    color: rgb(5, 160, 0);
+    bottom: -100px;
+    left: 90px;
+    text-align: center;
+    font-size: 18px;
 }
 
 .parteInferior {

@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { getPokemon } from "../../services/pokeApi/index.jsx";
 import { postPoke } from "../../services/jsonSv/index.jsx";
 import styles from "../PokedexEsquerda/style.module.css";
@@ -15,8 +15,13 @@ export const PokedexEsquerda = () => {
   const [isCatching, setIsCatching] = useState(false);
   const [capt, setCapt] = useState(false);
   const [naoCapt, setNaoCapt] = useState(false);
+  const [userId, setUserId] = useState();
 
   const { pokemonList,updateList } = useContext(PokeContext);
+
+  useEffect(()=> {
+    setUserId(localStorage.getItem('user_id'))
+  },[])
 
   async function getPokemonData() {
     setNaoCapt(false);
@@ -26,7 +31,7 @@ export const PokedexEsquerda = () => {
       setPokemon(result.data);
       setRandomLvl(Math.floor(Math.random() * (50 - 1) + 1));
     } catch {
-      console.log("Falha ao buscar Pokémon");
+      console.log("Falha ao buscar novo Pokémon!!!");
     }
   }
 
@@ -34,6 +39,9 @@ export const PokedexEsquerda = () => {
     if(pokemonList.length >= 10){
       toast.error("Limite de pokemons capturados excedido!!!");
       return;
+    } else if(localStorage.getItem('user_id') == "null"){
+      toast.error("Você precisa estar logado para capturar pokemons!!!");
+      return
     }
 
     setIsCatching(true);
@@ -44,7 +52,7 @@ export const PokedexEsquerda = () => {
         setCapt(true);
         setNaoCapt(false);
         setPokemon(false);
-        postPoke(pokemon,randomLvl)
+        postPoke(pokemon,randomLvl,userId)
         updateList()
       } else {
         setCapt(false);

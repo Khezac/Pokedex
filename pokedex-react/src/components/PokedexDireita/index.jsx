@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import styles from './style.module.css'
 import { deletePoke, getPokeCaptById } from '../../services/jsonSv';
 import { getPokemonById } from '../../services/pokeApi';
@@ -12,6 +12,10 @@ export const PokedexDireita = () => {
     const navigate = useNavigate();
 
     const {pokemonList, updateList} = useContext(PokeContext)
+
+    useEffect(() => {
+        updateList();
+    },[])
 
     async function handlePokeCapt(e) {
         let id = e.target.id;

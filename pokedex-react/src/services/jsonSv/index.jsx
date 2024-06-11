@@ -22,13 +22,14 @@ const apiJson = axios.create({
     return apiJson.get(url);
   }
 
-  export function postPoke(pokemon,lvl) {
+  export function postPoke(pokemon,lvl,user_id) {
     const url = 'capturados/'
 
     const Pokemon = {
       id: `${pokemon.id}`,
       lvl: lvl,
-      sprite: pokemon.sprites.front_default
+      sprite: pokemon.sprites.front_default,
+      user_id: user_id
     }
 
     const pokeJson = JSON.stringify(Pokemon);
